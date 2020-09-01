@@ -21,7 +21,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['Montserrat', ...defaultTheme.fontFamily.sans],
-        serif: ['Latinotype', ...defaultTheme.fontFamily.sans],
+        serif: ['Showcase Slab', ...defaultTheme.fontFamily.sans],
       },
       color: {
         brand: {
