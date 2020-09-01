@@ -6,6 +6,7 @@
   "author": "Luke Bennett <hello@lukebennett.com.au>",
   "dependencies": {
     "@reach/dialog": "^0.10.3",
+    "@tailwindcss/typography": "^0.2.0",
     "@tailwindcss/ui": "^0.3.0",
     "autoprefixer": "^9.8.0",
     "cssnano": "^4.1.10",

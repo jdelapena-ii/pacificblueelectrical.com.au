@@ -23,11 +23,11 @@ module.exports = {
         sans: ['Montserrat', ...defaultTheme.fontFamily.sans],
         serif: ['Showcase Slab', ...defaultTheme.fontFamily.sans],
       },
-      color: {
+      colors: {
         brand: {
           blue: '#1c75bb',
           yellow: '#f9b818',
-          black: '#f9b818',
+          black: '#060000',
         },
       },
     },
