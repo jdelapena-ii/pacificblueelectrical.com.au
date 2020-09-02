@@ -5,6 +5,9 @@ const typography = require('@tailwindcss/typography');
 module.exports = {
   purge: ['./src/**/*.js'],
   theme: {
+    future: {
+      removeDeprecatedGapUtilities: true,
+    },
     typography: (theme) => ({
       default: {
         css: {
