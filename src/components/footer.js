@@ -1,48 +1,77 @@
 import React from 'react';
-import { Link } from 'gatsby';
 
-import { useGraphQL } from '../hooks';
-import { footerNavigation, socialLinks } from '../data/site-navigation';
+import { useInstagram } from '../hooks';
+import { socialLinks } from '../data/site-navigation';
 
-export function Footer() {
-  const {
-    site: {
-      siteMetadata: { title },
-    },
-  } = useGraphQL();
+function Footer() {
+  const instagramFeed = useInstagram();
   return (
-    <footer className="bg-white">
-      <div className="max-w-screen-xl px-4 py-12 mx-auto overflow-hidden sm:px-6 lg:px-8">
-        <nav className="flex flex-wrap justify-center -mx-5 -my-2">
-          {footerNavigation.map((node) => (
-            <div key={node.id} className="px-5 py-2">
-              <Link
-                to={node.slug}
-                className="text-base leading-6 text-gray-500 transition duration-150 ease-in-out hover:text-gray-900"
+    <footer className="bg-brand-black">
+      <div className="max-w-screen-xl px-4 mx-auto overflow-hidden sm:px-6 lg:px-8">
+        <div className="grid grid-cols-4 gap-4">
+          <div className="space-y-6">
+            <p className="space-y-6 font-serif text-6xl leading-none text-white">
+              <span className="block tracking-wider">Keep</span>
+              <span className="block tracking-wider">Social</span>
+              <span className="block tracking-wider">With us</span>
+            </p>
+            <div className="flex items-center space-x-4">
+              <p className="text-xl font-bold text-white">Follow us</p>
+              <div className="flex justify-center space-x-2">
+                {socialLinks.map((node) => (
+                  <a
+                    key={node.id}
+                    href={node.url}
+                    className="text-white transition duration-150 ease-in-out hover:text-brand-blue"
+                  >
+                    <span className="sr-only">{node.label}</span>
+                    <node.icon className="w-10 h-10" />
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+          {instagramFeed.map((feed, index) => (
+            <div className="flex items-center">
+              <a
+                key={feed.id}
+                href={feed.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative block w-full h-full overflow-hidden aspect-ratio-square"
               >
-                {node.label}
-              </Link>
+                <img
+                  key={index}
+                  src={feed.src}
+                  alt={feed.caption}
+                  srcSet={feed.srcSet.join(', ')}
+                  className="absolute inset-0 object-contain w-full h-full"
+                />
+                {feed.caption && (
+                  <div
+                    aria-hidden
+                    className="absolute inset-0 p-4 overflow-y-auto text-white break-words transition duration-300 ease-in-out bg-black bg-opacity-75 opacity-0 overscroll-y-auto hover:opacity-100"
+                  >
+                    {feed.caption}
+                  </div>
+                )}
+              </a>
             </div>
           ))}
-        </nav>
-        <div className="flex justify-center mt-8 space-x-6">
-          {socialLinks.map((node) => (
-            <a
-              key={node.id}
-              href={node.url}
-              className="text-gray-400 transition duration-150 ease-in-out hover:text-gray-500"
-            >
-              <span className="sr-only">{node.label}</span>
-              <node.icon className="w-6 h-6" />
-            </a>
-          ))}
         </div>
-        <div className="mt-8">
-          <p className="text-base leading-6 text-center text-gray-400">
-            &copy; {new Date().getFullYear()} {title}. All rights reserved.
-          </p>
+        <div className="py-2 mt-8 border-t border-white border-solid">
+          <a
+            href="https://www.phirannodesigns.com.au/"
+            target="_blank"
+            rel="noreferrer"
+            className="block text-sm leading-6 text-center text-white"
+          >
+            Website by Phiranno Designs
+          </a>
         </div>
       </div>
     </footer>
   );
 }
+
+export { Footer };

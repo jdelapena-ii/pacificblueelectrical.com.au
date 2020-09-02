@@ -10,7 +10,6 @@ export default function IndexPage() {
       <SEO title="Home" />
       <Hero image={omnicare.childImageSharp.fluid} />
       <h1 className="font-serif">Hello world!</h1>
-      <Contact />
     </Layout>
   );
 }

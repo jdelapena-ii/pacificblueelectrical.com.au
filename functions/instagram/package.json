@@ -1,0 +1,9 @@
+{
+  "name": "instagram",
+  "version": "1.0.0",
+  "main": "instagram.js",
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^2.6.0"
+  }
+}

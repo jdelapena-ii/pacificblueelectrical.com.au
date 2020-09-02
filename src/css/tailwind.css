@@ -1,8 +1,41 @@
 /*! purgecss start ignore */
-@import "./fonts.css";
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "./components.css";
+/* Fonts */
+@font-face {
+  font-family: "Showcase Slab";
+  src: url("/fonts/showcase-slab.woff2") format("woff2"),
+    url("/fonts/showcase-slab.woff") format("woff");
+}
+
+/**
+ * This injects Tailwind's base styles and any base styles registered by
+ * plugins.
+ */
+@tailwind base;
+
+/**
+ * This injects Tailwind's component classes and any component classes
+ * registered by plugins.
+ */
+@tailwind components;
+
+/**
+ * These classes have lower specificity so we can override them
+ * with utility classes
+ */
+
+/* Tell Reach Dialog that we are handling styling ourselves */
+:root {
+  --reach-dialog: 1;
+}
+
 /*! purgecss end ignore */
-@import "tailwindcss/utilities";
-@import "./utilities.css";
+
+/**
+ * This injects Tailwind's utility classes and any utility classes registered
+ * by plugins.
+ */
+@tailwind utilities;
+
+/**
+ * Utility classes
+ */
