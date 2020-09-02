@@ -32,9 +32,8 @@ function Footer() {
             </div>
           </div>
           {instagramFeed.map((feed, index) => (
-            <div className="flex items-center">
+            <div key={feed.id} className="flex items-center">
               <a
-                key={feed.id}
                 href={feed.url}
                 target="_blank"
                 rel="noopener noreferrer"
