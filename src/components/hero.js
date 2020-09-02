@@ -18,9 +18,9 @@ function Hero({ children, image }) {
         style={{ minHeight: '20rem' }}
         className="relative inset-0 flex items-center justify-center px-4 py-4 overflow-hidden sm:px-6 lg:px-8"
       >
-        <h1 className="max-w-2xl text-4xl font-bold leading-tight text-center uppercase tracking-insane text-shadow md:text-5xl">
+        <div className="max-w-xl font-serif text-xl leading-tight text-left text-white tracking-insane text-shadow md:text-4xl">
           {children}
-        </h1>
+        </div>
       </div>
     </div>
   );
@@ -28,7 +28,7 @@ function Hero({ children, image }) {
 
 Hero.propTypes = {
   image: PropTypes.object.isRequired,
-  children: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 export { Hero };

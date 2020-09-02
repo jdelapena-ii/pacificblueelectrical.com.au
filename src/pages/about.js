@@ -8,7 +8,17 @@ export default function IndexPage() {
   return (
     <Layout>
       <SEO title="About" />
-      <Hero image={jade.childImageSharp.fluid} />
+      <Hero image={jade.childImageSharp.fluid}>
+        <h1>
+          Do it Once,
+          <br />
+          Do It Right
+        </h1>
+        <ul>
+          <li>List 1</li>
+          <li>List 2</li>
+        </ul>
+      </Hero>
       <Contact />
     </Layout>
   );
