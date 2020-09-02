@@ -1,6 +1,7 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 const tailwindUI = require('@tailwindcss/ui');
 const typography = require('@tailwindcss/typography');
+const tailwindcssAspectRatio = require('tailwindcss-aspect-ratio');
 
 module.exports = {
   purge: ['./src/**/*.js'],
@@ -21,6 +22,9 @@ module.exports = {
         },
       },
     }),
+    aspectRatio: {
+      square: [1, 1],
+    },
     extend: {
       fontFamily: {
         sans: ['Montserrat', ...defaultTheme.fontFamily.sans],
@@ -39,5 +43,5 @@ module.exports = {
     },
   },
   variants: { margin: ['responsive', 'first'] },
-  plugins: [typography, tailwindUI],
+  plugins: [typography, tailwindUI, tailwindcssAspectRatio],
 };

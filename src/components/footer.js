@@ -1,6 +1,4 @@
 import React from 'react';
-import { Link } from 'gatsby';
-import GatsbyImage from 'gatsby-image';
 
 import { useGraphQL, useInstagram } from '../hooks';
 import { socialLinks } from '../data/site-navigation';
@@ -14,7 +12,6 @@ export function Footer() {
 
   const instagramFeed = useInstagram();
 
-  console.log(instagramFeed);
   return (
     <footer className="bg-brand-black">
       <div className="max-w-screen-xl px-4 mx-auto overflow-hidden sm:px-6 lg:px-8">
@@ -43,13 +40,29 @@ export function Footer() {
           </div>
           {instagramFeed.map((feed, index) => (
             <div className="flex items-center">
-              <img
-                key={index}
-                src={feed.src}
-                alt={feed.caption}
-                srcSet={feed.srcSet.join(', ')}
-                className="w-full h-auto"
-              />
+              <a
+                key={feed.id}
+                href={feed.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative block w-full h-full overflow-hidden aspect-ratio-square"
+              >
+                <img
+                  key={index}
+                  src={feed.src}
+                  alt={feed.caption}
+                  srcSet={feed.srcSet.join(', ')}
+                  className="absolute inset-0 object-contain w-full h-full"
+                />
+                {feed.caption && (
+                  <div
+                    aria-hidden
+                    className="absolute inset-0 p-4 overflow-y-auto text-white break-words transition duration-300 ease-in-out bg-black bg-opacity-75 opacity-0 overscroll-y-auto hover:opacity-100"
+                  >
+                    {feed.caption}
+                  </div>
+                )}
+              </a>
             </div>
           ))}
         </div>
