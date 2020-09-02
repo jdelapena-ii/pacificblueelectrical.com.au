@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-export function FacebookIcon({ className }) {
+function FacebookIcon({ className }) {
   return (
     <svg fill="currentColor" viewBox="0 0 24 24" className={className}>
       <path
@@ -16,3 +16,5 @@ export function FacebookIcon({ className }) {
 FacebookIcon.propTypes = {
   className: PropTypes.string,
 };
+
+export { FacebookIcon };
