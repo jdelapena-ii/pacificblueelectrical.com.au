@@ -33,6 +33,7 @@
     "react-helmet": "^6.0.0",
     "react-spring": "^8.0.27",
     "tailwindcss": "^1.4.6",
+    "tailwindcss-aspect-ratio": "^3.0.0",
     "typeface-montserrat": "^0.0.75"
   },
   "devDependencies": {
