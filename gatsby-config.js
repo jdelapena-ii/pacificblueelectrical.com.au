@@ -7,16 +7,19 @@ const tailwindConfig = require('./tailwind.config.js');
 
 const fullConfig = resolveConfig(tailwindConfig);
 
+const title = 'Pacific Blue Electrical';
+const siteUrl = 'https://www.pacificblueelectrical.com.au';
+
 dotenv.config({
   path: `.env.${process.env.NODE_ENV}`,
 });
 
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Starter Tailwind',
-    description: 'Gatsby starter styled with Tailwind.',
-    author: '@luke_bennett_',
-    siteUrl: 'https://gatsby-starter-tailwindcss.netlify.com',
+    title,
+    description: '',
+    author: '',
+    siteUrl,
   },
   plugins: [
     'gatsby-plugin-netlify',
@@ -28,17 +31,17 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-canonical-urls',
       options: {
-        siteUrl: 'https://gatsby-starter-tailwindcss.netlify.com',
+        siteUrl,
       },
     },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'Gatsby Starter TailwindCSS',
-        short_name: 'Gatsby Starter',
+        name: title,
+        short_name: 'Pacific Blue',
         start_url: '/',
-        background_color: fullConfig.theme.colors.teal['600'],
-        theme_color: fullConfig.theme.colors.teal['600'],
+        background_color: fullConfig.theme.colors.brand.black,
+        theme_color: fullConfig.theme.colors.brand.black,
         display: 'minimal-ui',
         icon: 'src/images/favicon.png', // This path is relative to the root of the site.
       },
