@@ -37,9 +37,6 @@ module.exports = {
           black: '#060000',
         },
       },
-      lineHeight: {
-        '11': '3rem',
-      },
     },
   },
   variants: { margin: ['responsive', 'first'] },

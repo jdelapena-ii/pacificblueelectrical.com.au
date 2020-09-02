@@ -24,6 +24,20 @@ export function useGraphQL() {
             title
           }
         }
+        jade: file(relativePath: { eq: "jade.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 1920) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        omnicare: file(relativePath: { eq: "omnicare.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 1920) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     `
   );

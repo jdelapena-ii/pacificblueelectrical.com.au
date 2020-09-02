@@ -1,26 +1,19 @@
 import React from 'react';
 
-import { useGraphQL, useInstagram } from '../hooks';
+import { useInstagram } from '../hooks';
 import { socialLinks } from '../data/site-navigation';
 
-export function Footer() {
-  const {
-    site: {
-      siteMetadata: { title },
-    },
-  } = useGraphQL();
-
+function Footer() {
   const instagramFeed = useInstagram();
-
   return (
     <footer className="bg-brand-black">
       <div className="max-w-screen-xl px-4 mx-auto overflow-hidden sm:px-6 lg:px-8">
         <div className="grid grid-cols-4 gap-4">
-          <div>
-            <p className="mb-6 font-serif text-6xl text-white">
-              <span className="block tracking-wider leading-11">Keep</span>
-              <span className="block tracking-wider leading-11">Social</span>
-              <span className="block tracking-wider leading-11">With us</span>
+          <div className="space-y-6">
+            <p className="space-y-6 font-serif text-6xl leading-none text-white">
+              <span className="block tracking-wider">Keep</span>
+              <span className="block tracking-wider">Social</span>
+              <span className="block tracking-wider">With us</span>
             </p>
             <div className="flex items-center space-x-4">
               <p className="text-xl font-bold text-white">Follow us</p>
@@ -73,10 +66,12 @@ export function Footer() {
             rel="noreferrer"
             className="block text-sm leading-6 text-center text-white"
           >
-            Wesbite by Phiranno Designs
+            Website by Phiranno Designs
           </a>
         </div>
       </div>
     </footer>
   );
 }
+
+export { Footer };
