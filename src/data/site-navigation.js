@@ -1,6 +1,6 @@
 import { FacebookIcon, InstagramIcon } from '../components/vectors';
 
-export const mainNavigation = [
+const mainNavigation = [
   {
     label: 'Services',
     slug: '/services',
@@ -15,7 +15,7 @@ export const mainNavigation = [
   },
 ];
 
-export const socialLinks = [
+const socialLinks = [
   {
     label: 'Facebook',
     url: 'https://www.facebook.com/pacificblueelectrical/',
@@ -27,3 +27,5 @@ export const socialLinks = [
     icon: InstagramIcon,
   },
 ];
+
+export { mainNavigation, socialLinks };
