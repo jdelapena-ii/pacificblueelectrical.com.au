@@ -1,8 +1,6 @@
 const dotenv = require('dotenv');
-const postCssImport = require('postcss-import');
 const tailwindcss = require('tailwindcss');
 const autoprefixer = require('autoprefixer');
-const cssnano = require('cssnano');
 const resolveConfig = require('tailwindcss/resolveConfig');
 
 const tailwindConfig = require('./tailwind.config.js');
@@ -26,7 +24,6 @@ module.exports = {
     'gatsby-plugin-robots-txt',
     'gatsby-plugin-sharp',
     'gatsby-plugin-sitemap',
-    'gatsby-transformer-json',
     'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-plugin-canonical-urls',
@@ -49,12 +46,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-postcss',
       options: {
-        postCssPlugins: [
-          postCssImport,
-          tailwindcss(tailwindConfig),
-          autoprefixer,
-          ...(process.env.NODE_ENV === 'production' ? [cssnano] : []),
-        ],
+        postCssPlugins: [tailwindcss(tailwindConfig), autoprefixer],
       },
     },
     {
