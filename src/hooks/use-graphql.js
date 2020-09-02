@@ -31,6 +31,13 @@ export function useGraphQL() {
             }
           }
         }
+        omnicare: file(relativePath: { eq: "omnicare.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 1920) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     `
   );
