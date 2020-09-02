@@ -34,7 +34,7 @@ export function Footer() {
             rel="noreferrer"
             className="block text-sm leading-6 text-center text-white"
           >
-            Wesbite by Phiranna Designs
+            Wesbite by Phiranno Designs
           </a>
         </div>
       </div>
