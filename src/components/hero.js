@@ -10,7 +10,7 @@ function Hero({ children, bgImage }) {
           <GatsbyImage fluid={bgImage} className="flex-1" />
         </div>
       </div>
-      <div className="relative inset-0 flex items-center px-4 py-8 sm:absolute sm:px-8 lg:px-20">
+      <div className="relative inset-0 flex items-center px-4 pt-8 pb-12 sm:absolute sm:px-8 lg:px-20">
         <div
           aria-hidden
           className="absolute inset-0 opacity-50 from-black via-transparent bg-gradient-to-r"
@@ -23,7 +23,7 @@ function Hero({ children, bgImage }) {
 
 Hero.propTypes = {
   bgImage: PropTypes.object.isRequired,
-  children: PropTypes.object.isRequired,
+  children: PropTypes.array.isRequired,
 };
 
 export { Hero };
