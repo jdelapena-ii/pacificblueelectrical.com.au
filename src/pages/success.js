@@ -7,7 +7,7 @@ function SuccessPage() {
   return (
     <Layout isHome>
       <SEO title="Message received" />
-      <article className="relative flex items-center justify-center w-full px-4 my-24 sm:mt-40 sm:px-6 lg:px-8">
+      <article className="relative flex items-center justify-center w-full px-4 pt-8 lg:pt-12 sm:px-6 lg:px-8">
         <div className="w-full max-w-4xl px-4 py-12 mx-auto text-center bg-brand-yellow sm:px-6 lg:px-8">
           <h2 className="mb-3 font-serif text-6xl leading-none tracking-normal text-center uppercase sm:text-6xl">
             SUCCESS
