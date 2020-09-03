@@ -8,7 +8,7 @@ import { Logo } from './vectors';
 export function Header() {
   return (
     <nav className="sticky top-0 z-20 shadow bg-brand-black">
-      <div className="px-4 py-6 mx-auto max-w-7xl sm:px-6 lg:px-8">
+      <div className="px-4 py-6 mx-auto max-w-7xl sm:px-6 lg:px-20">
         <div className="flex justify-between">
           <div className="flex">
             <Link to="/" className="flex items-center flex-shrink-0">

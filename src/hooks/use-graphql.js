@@ -12,28 +12,14 @@ export function useGraphQL() {
   const data = useStaticQuery(
     graphql`
       {
-        placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
-          childImageSharp {
-            fluid(maxWidth: 300) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
         site {
           siteMetadata {
             title
           }
         }
-        jade: file(relativePath: { eq: "jade.jpg" }) {
+        homeHeroImage: file(relativePath: { eq: "hero/home.jpg" }) {
           childImageSharp {
-            fluid(maxWidth: 1920) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-        omnicare: file(relativePath: { eq: "omnicare.jpg" }) {
-          childImageSharp {
-            fluid(maxWidth: 1920) {
+            fluid(maxWidth: 1920, quality: 90) {
               ...GatsbyImageSharpFluid
             }
           }

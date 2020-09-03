@@ -7,8 +7,8 @@ function Footer() {
   const instagramFeed = useInstagram();
   return (
     <footer className="bg-brand-black">
-      <div className="max-w-screen-xl px-4 mx-auto overflow-hidden sm:px-6 lg:px-8">
-        <div className="grid grid-cols-4 gap-4">
+      <div className="max-w-screen-xl mx-auto overflow-hidden">
+        <div className="grid grid-cols-4 gap-4 px-20">
           <div className="space-y-6">
             <p className="space-y-6 font-serif text-6xl leading-none text-white">
               <span className="block tracking-wider">Keep</span>
@@ -32,7 +32,7 @@ function Footer() {
             </div>
           </div>
           {instagramFeed.map((feed, index) => (
-            <div key={feed.id} className="flex items-center">
+            <div key={index} className="flex items-center">
               <a
                 href={feed.url}
                 target="_blank"
