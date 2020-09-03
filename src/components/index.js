@@ -3,3 +3,4 @@ export * from './contact';
 export * from './layout';
 export * from './seo';
 export * from './hero';
+export * from './map';
