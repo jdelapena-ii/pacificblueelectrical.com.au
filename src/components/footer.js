@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { nanoid } from 'nanoid';
 import { useInstagram } from '../hooks';
 import { socialLinks } from '../data/site-navigation';
 
@@ -22,7 +22,7 @@ function Footer() {
               <div className="flex justify-center space-x-2">
                 {socialLinks.map((node) => (
                   <a
-                    key={node.id}
+                    key={nanoid()}
                     href={node.url}
                     className="text-white transition duration-150 ease-in-out hover:text-brand-blue"
                   >

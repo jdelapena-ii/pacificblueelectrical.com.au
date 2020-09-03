@@ -39,6 +39,11 @@ button:focus {
   @apply shadow-outline outline-none;
 }
 
+/* Yellow box sizing */
+.yellow-box {
+  height: 120%;
+}
+
 /*! purgecss end ignore */
 
 /**

@@ -1,16 +1,17 @@
 import React from 'react';
+import { Link } from 'gatsby';
 
-import { Layout, SEO, Hero } from '../components';
+import { Layout, SEO, Hero, SectionWithYellowBox } from '../components';
 import { useGraphQL } from '../hooks';
 
 export default function IndexPage() {
-  const { homeHeroImage } = useGraphQL();
-  console.log(homeHeroImage);
+  const { homeHeroImage, homeTwoImage } = useGraphQL();
+
   return (
     <Layout>
       <SEO title="Home" />
       <Hero bgImage={homeHeroImage.childImageSharp.fluid}>
-        <h1 className="flex flex-col mb-4 font-serif text-6xl text-white">
+        <h1 className="flex flex-col mb-4 font-serif text-5xl text-white sm:text-6xl">
           <span className="leading-none">DO IT ONCE,</span>
           <span className="leading-none">DO IT RIGHT</span>
         </h1>
@@ -133,6 +134,36 @@ export default function IndexPage() {
           </li>
         </ul>
       </Hero>
+
+      <SectionWithYellowBox
+        heading={
+          <>
+            <h2 className="relative pl-4 font-serif text-5xl leading-none text-white md:pl-12 md:pr-10 md:max-w-md">
+              Port Macquire's most versatile electricians
+            </h2>
+          </>
+        }
+        image={homeTwoImage.childImageSharp.fluid}
+      >
+        <div className="pt-8 pb-10 md:pb-16 md:px-8 md:max-w-md">
+          <p className="mb-4 text-white">
+            Wether your project involves level 2, general electrical or phone
+            &amp; data, you can be assured Pacific Blue Electrical can safely
+            and professionally comlete your project without outsourcing to other
+            contractors to save your time and money.
+          </p>
+          <p className="mb-8 text-white">
+            We listen to what you want, discuss available options and suggest
+            the best solutions for your needs.
+          </p>
+          <Link
+            to="/services/level-2"
+            className="inline-block px-6 font-serif text-lg tracking-normal text-white transition duration-300 ease-in-out rounded bg-brand-blue"
+          >
+            Find out more here
+          </Link>
+        </div>
+      </SectionWithYellowBox>
     </Layout>
   );
 }
