@@ -27,6 +27,7 @@
     }
   ],
   "dependencies": {
+    "@react-google-maps/api": "^1.9.12",
     "@tailwindcss/ui": "^0.5.0",
     "autoprefixer": "^9.8.6",
     "dotenv": "^8.2.0",
