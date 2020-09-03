@@ -12,7 +12,10 @@ function Hero({ children, bgImage }) {
           style={{ position: 'absolute' }}
         />
       </div>
-      <div style={{ minHeight: '35rem' }} className="relative px-20 py-8">
+      <div
+        style={{ minHeight: '35rem' }}
+        className="relative px-4 py-8 sm:px-8 lg:px-20"
+      >
         {children}
       </div>
     </article>
