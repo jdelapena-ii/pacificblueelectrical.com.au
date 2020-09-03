@@ -13,7 +13,7 @@ import { Footer } from './footer';
 
 export function Layout({ children }) {
   return (
-    <div className="flex flex-col min-h-screen pt-4 bg-brand-black">
+    <div className="flex flex-col min-h-screen lg:pt-4 bg-brand-black">
       <Header />
       <main className="flex-1 w-full mx-auto max-w-7xl">
         <article>{children}</article>

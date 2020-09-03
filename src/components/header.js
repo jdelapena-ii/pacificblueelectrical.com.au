@@ -12,11 +12,11 @@ export function Header() {
         <div className="flex justify-between">
           <div className="flex">
             <Link to="/" className="flex items-center flex-shrink-0">
-              <Logo className="w-auto h-20" />
+              <Logo className="w-auto h-14 lg:h-20" />
             </Link>
           </div>
           <div className="flex space-x-8">
-            <div className="hidden space-x-8 sm:ml-6 sm:flex">
+            <div className="hidden space-x-8 sm:ml-6 md:flex">
               {mainNavigation.map((node) => (
                 <Link
                   key={nanoid()}
