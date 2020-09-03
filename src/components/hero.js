@@ -1,22 +1,21 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import GatsbyImage from 'gatsby-image';
+import PropTypes from 'prop-types';
 
 function Hero({ children, bgImage }) {
   return (
     <article className="relative overflow-hidden">
-      <div className="absolute w-full h-full transform -translate-y-1/2 top-1/2 aspect-ratio-16/9">
-        <GatsbyImage
-          fluid={bgImage}
-          className="object-contain w-full h-full"
-          style={{ position: 'absolute' }}
-        />
+      <div className="absolute inset-0 sm:relative sm:h-0 sm:aspect-ratio-16/9">
+        <div className="absolute inset-0 flex">
+          <GatsbyImage fluid={bgImage} className="flex-1" />
+        </div>
       </div>
-      <div
-        style={{ minHeight: '35rem' }}
-        className="relative px-4 py-8 sm:px-8 lg:px-20"
-      >
-        {children}
+      <div className="relative inset-0 flex items-center px-4 py-8 sm:absolute sm:px-8 lg:px-20">
+        <div
+          aria-hidden
+          className="absolute inset-0 opacity-50 from-black via-transparent bg-gradient-to-r"
+        />
+        <div className="relative">{children}</div>
       </div>
     </article>
   );
