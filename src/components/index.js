@@ -5,3 +5,4 @@ export * from './seo';
 export * from './hero';
 export * from './map';
 export * from './section-with-yellow-box';
+export * from './image-grid';
