@@ -23,10 +23,21 @@
  * with utility classes
  */
 
+/* Smooth scrolling on the whole document */
+html {
+  scroll-behavior: smooth;
+}
+
 /* Tell Reach Dialog that we are handling styling ourselves */
 :root {
   --reach-dialog: 1;
-} 
+}
+
+/* Replace default focus styles */
+a:focus,
+button:focus {
+  @apply shadow-outline outline-none;
+}
 
 /*! purgecss end ignore */
 
