@@ -1,19 +1,20 @@
 import React from 'react';
 import { nanoid } from 'nanoid';
+
 import { useInstagram } from '../hooks';
 import { socialLinks } from '../data/site-navigation';
 
 function Footer() {
   const instagramFeed = useInstagram();
   return (
-    <footer className="pt-12 bg-brand-black">
+    <footer className="bg-brand-black">
       <div className="max-w-screen-xl mx-auto overflow-hidden">
         <div className="grid-cols-4 gap-4 px-4 lg:grid sm:px-8 lg:px-20">
           <div className="flex flex-col items-center col-span-1 mb-8 space-y-6 lg:block lg:mb-0">
             <p className="space-y-2 font-serif text-5xl leading-none text-center text-white lg:flex lg:flex-col lg:text-6xl lg:text-left">
               <span className="tracking-wider">Keep </span>
               <span className="tracking-wider">Social </span>
-              <span className="tracking-wider">With us</span>
+              <span className="tracking-wider">With&nbsp;us</span>
             </p>
             <div className="flex items-center space-x-4">
               <p className="text-lg font-bold text-white lg:text-xl">
@@ -35,7 +36,7 @@ function Footer() {
           </div>
           <div className="grid grid-cols-2 col-span-3 gap-4 sm:grid-cols-3">
             {instagramFeed.map((feed, index) => (
-              <div key={index}>
+              <div key={index} className={index === 3 && 'sm:hidden'}>
                 <a
                   href={feed.url}
                   target="_blank"

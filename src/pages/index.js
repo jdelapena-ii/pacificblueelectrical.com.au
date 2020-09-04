@@ -1,11 +1,17 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-import { Layout, SEO, Hero, SectionWithYellowBox } from '../components';
+import {
+  Layout,
+  SEO,
+  Hero,
+  SectionWithYellowBox,
+  Contact,
+} from '../components';
 import { useGraphQL } from '../hooks';
 
-export default function IndexPage() {
-  const { homeHeroImage, homeTwoImage } = useGraphQL();
+function IndexPage() {
+  const { homeHeroImage, homeHeroTwoImage } = useGraphQL();
 
   return (
     <Layout>
@@ -15,12 +21,10 @@ export default function IndexPage() {
           <span className="leading-none">DO IT ONCE,</span>
           <span className="leading-none">DO IT RIGHT</span>
         </h1>
-
         <ul className="space-y-1 list-none">
           <li>
             <div className="flex items-start">
               <span className="inline-flex items-center">
-                ​
                 <svg
                   fill="currentColor"
                   viewBox="0 0 20 20"
@@ -43,7 +47,6 @@ export default function IndexPage() {
           <li>
             <div className="flex items-start">
               <span className="inline-flex items-center">
-                ​
                 <svg
                   fill="currentColor"
                   viewBox="0 0 20 20"
@@ -66,7 +69,6 @@ export default function IndexPage() {
           <li>
             <div className="flex items-start">
               <span className="inline-flex items-center">
-                ​
                 <svg
                   fill="currentColor"
                   viewBox="0 0 20 20"
@@ -89,7 +91,6 @@ export default function IndexPage() {
           <li>
             <div className="flex items-start">
               <span className="inline-flex items-center">
-                ​
                 <svg
                   fill="currentColor"
                   viewBox="0 0 20 20"
@@ -112,7 +113,6 @@ export default function IndexPage() {
           <li>
             <div className="flex items-start">
               <span className="inline-flex items-center">
-                ​
                 <svg
                   fill="currentColor"
                   viewBox="0 0 20 20"
@@ -143,7 +143,7 @@ export default function IndexPage() {
             </h2>
           </>
         }
-        image={homeTwoImage.childImageSharp.fluid}
+        image={homeHeroTwoImage.childImageSharp.fluid}
       >
         <div className="pt-8 pb-10 md:pb-16 md:px-8 md:max-w-md">
           <p className="mb-4 text-white">
@@ -164,6 +164,14 @@ export default function IndexPage() {
           </Link>
         </div>
       </SectionWithYellowBox>
+
+      <Contact
+        bgColorClass="bg-brand-yellow"
+        textColorClass="text-black"
+        subHeading="In need of an electrician?"
+      />
     </Layout>
   );
 }
+
+export default IndexPage;

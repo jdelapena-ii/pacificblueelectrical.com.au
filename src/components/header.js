@@ -5,9 +5,13 @@ import { nanoid } from 'nanoid';
 import { mainNavigation } from '../data/site-navigation';
 import { Logo } from './vectors';
 import { MobileMenu } from './mobile-menu';
+import { useGraphQL } from '../hooks';
 
 export function Header() {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const {
+    site: { siteMetadata },
+  } = useGraphQL();
   return (
     <header className="sticky top-0 z-20 shadow bg-brand-black">
       <MobileMenu
@@ -37,11 +41,10 @@ export function Header() {
                 ))}
               </div>
               <a
-                href="tel:404044040"
-                className="self-center block px-2 py-1 font-serif text-xl font-medium leading-none tracking-wide bg-white rounded"
+                href={`tel:${siteMetadata.phone.split(' ').join('')}`}
+                className="self-center block px-2 py-1 font-serif text-xl font-medium leading-none tracking-wide whitespace-no-wrap bg-white rounded"
               >
-                Call us{' '}
-                <span className="block sm:inline-block">404 404 404</span>
+                Call us {siteMetadata.phone}
               </a>
 
               <button
