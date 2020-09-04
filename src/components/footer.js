@@ -6,7 +6,7 @@ import { socialLinks } from '../data/site-navigation';
 function Footer() {
   const instagramFeed = useInstagram();
   return (
-    <footer className="pt-12 bg-brand-black">
+    <footer className="bg-brand-black">
       <div className="max-w-screen-xl mx-auto overflow-hidden">
         <div className="grid-cols-4 gap-4 px-4 lg:grid sm:px-8 lg:px-20">
           <div className="flex flex-col items-center col-span-1 mb-8 space-y-6 lg:block lg:mb-0">
