@@ -6,7 +6,9 @@ import { useGraphQL } from '../hooks';
 function ImageGrid() {
   const { homeTwoImage } = useGraphQL();
   return (
-    <div className="grid bg-black md:grid-cols-2 lg:grid-cols-3">
+    <div className="grid bg-black md:grid-cols-2 lg:grid-cols-4">
+      <ServiceImage image={homeTwoImage.childImageSharp.fluid} />
+      <ServiceImage image={homeTwoImage.childImageSharp.fluid} />
       <ServiceImage image={homeTwoImage.childImageSharp.fluid} />
       <ServiceImage image={homeTwoImage.childImageSharp.fluid} />
       <ServiceImage image={homeTwoImage.childImageSharp.fluid} />
@@ -20,7 +22,9 @@ function ImageGrid() {
 function ServiceImage({ image }) {
   return (
     <div className="relative h-0 aspect-ratio-square">
-      <GatsbyImage fluid={image} className="flex-1" />
+      <div className="py-0 m-2 aspect-ratio-square">
+        <GatsbyImage fluid={image} className="flex-1" />
+      </div>
     </div>
   );
 }
