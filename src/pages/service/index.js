@@ -3,7 +3,7 @@ import React from 'react';
 import { Layout, SEO, Hero, SectionWithYellowBox } from '../../components';
 import { useGraphQL } from '../../hooks';
 
-export default function ServicePage() {
+function ServicePage() {
   const { serviceHeroImage } = useGraphQL();
 
   return (
@@ -18,7 +18,6 @@ export default function ServicePage() {
           <li>
             <div className="flex items-start">
               <span className="inline-flex items-center">
-                ​
                 <svg
                   fill="currentColor"
                   viewBox="0 0 20 20"
@@ -41,7 +40,6 @@ export default function ServicePage() {
           <li>
             <div className="flex items-start">
               <span className="inline-flex items-center">
-                ​
                 <svg
                   fill="currentColor"
                   viewBox="0 0 20 20"
@@ -64,7 +62,6 @@ export default function ServicePage() {
           <li>
             <div className="flex items-start">
               <span className="inline-flex items-center">
-                ​
                 <svg
                   fill="currentColor"
                   viewBox="0 0 20 20"
@@ -87,7 +84,6 @@ export default function ServicePage() {
           <li>
             <div className="flex items-start">
               <span className="inline-flex items-center">
-                ​
                 <svg
                   fill="currentColor"
                   viewBox="0 0 20 20"
@@ -110,7 +106,6 @@ export default function ServicePage() {
           <li>
             <div className="flex items-start">
               <span className="inline-flex items-center">
-                ​
                 <svg
                   fill="currentColor"
                   viewBox="0 0 20 20"
@@ -132,7 +127,6 @@ export default function ServicePage() {
           </li>
         </ul>
       </Hero>
-
       <SectionWithYellowBox
         heading={
           <>
@@ -159,3 +153,5 @@ export default function ServicePage() {
     </Layout>
   );
 }
+
+export default ServicePage;

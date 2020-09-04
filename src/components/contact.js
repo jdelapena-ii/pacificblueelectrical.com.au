@@ -1,115 +1,105 @@
-import React from 'react';
-import { Link } from 'gatsby';
+import React, { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import PropTypes from 'prop-types';
 
-import { useForm } from '../hooks';
-import { Form, Input, TextArea, CheckBox } from './form-elements';
+import { ContactForm, Input, TextArea, Select } from './form-elements';
 
-export function Contact() {
-  const { state, handleSubmit, handleChange } = useForm({
-    first_name: '',
-    last_name: '',
-    email: '',
-    phone_number: '',
-    subject: '',
-    message: '',
-    agree_to_privacy_policy: false,
-  });
+function Contact({ bgColorClass, subHeading, textColorClass }) {
+  const { register, handleSubmit, errors } = useForm({ mode: 'onBlur' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   return (
-    <article className="relative overflow-hidden bg-white">
+    <article
+      className={`grid gap-4 py-6 md:py-0 px-4 mb-12 sm:px-8 lg:px-20 md:grid-cols-2 ${
+        bgColorClass || 'bg-brand-blue'
+      }`}
+    >
       <div
-        aria-hidden
-        className="absolute inset-0 flex w-1/3 w-full h-full overflow-hidden"
+        className={`md:pt-12 md:pr-8 md:mb-0 mb-8 ${
+          textColorClass || 'text-white'
+        }`}
       >
-        <div className="w-1/2 bg-brand-pink">
-          <div className="h-full transform -skew-x-12 bg-brand-pink" />
-        </div>
-        <div className="w-1/2 bg-brand-blue">
-          <div className="h-full transform -skew-x-12 bg-brand-blue" />
-        </div>
+        <h1 className="mb-2 font-serif text-5xl text-center md:text-6xl md:text-left">
+          Contact us
+        </h1>
+
+        <p className="font-semibold">{subHeading}</p>
+        <p className="mb-12">
+          Simply send us an email us for a free quote today or phone us on
+          <a href="tel:404040404">404 040 404</a>
+        </p>
+
+        <p>
+          <span className="font-semibold">Phone</span>{' '}
+          <a href="tel:404040404">404 040 404</a>
+        </p>
+        <p>
+          <span className="font-semibold">Location</span>{' '}
+          <span>Port Macquire, XXXX</span>
+        </p>
+        <p>
+          <span className="font-semibold">24/7 Emergency Service</span>{' '}
+          <a href="tel:404040404">404 040 404</a>
+        </p>
       </div>
-      <div className="relative max-w-xl px-4 py-12 mx-auto lg:my-12 bg-gray-50 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <h2 className="h2">Get in touch with our team</h2>
-        </div>
-        <div className="mt-12">
-          <Form
-            onSubmit={handleSubmit}
-            action="/success/"
-            name="contact-form"
-            className="grid grid-cols-1 row-gap-6 sm:grid-cols-2 sm:col-gap-8"
+
+      <ContactForm
+        handleSubmit={handleSubmit}
+        register={register}
+        setIsSubmitting={setIsSubmitting}
+        action="/success/"
+        name="contact_form"
+        className="w-full max-w-lg p-6 mx-auto space-y-6 transform bg-white shadow-sm md:-translate-y-14"
+      >
+        <Input
+          label="Full Name"
+          name="full_name"
+          register={register}
+          errors={errors}
+        />
+        <Input
+          label="Contact Number"
+          name="contact_number"
+          type="tel"
+          register={register}
+          errors={errors}
+        />
+        <Input
+          label="Email"
+          name="email_address"
+          register={register}
+          errors={errors}
+        />
+        <Select
+          name="inquiries"
+          label="What are you inquiring about?"
+          options={['Done deal', 'No deal', 'Other']}
+          register={register}
+          errors={errors}
+        />
+        <TextArea
+          label="Message"
+          name="message"
+          register={register}
+          errors={errors}
+        />
+        <div className="flex justify-end mt-4">
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className="px-12 py-2 text-sm font-bold leading-none transition duration-300 ease-in-out border border-black rounded shadow-sm justify-cente hover:bg-black hover:text-white focus:bg-white focus:text-black"
           >
-            <Input
-              name="first_name"
-              label="First name"
-              value={state.first_name}
-              handleChange={handleChange}
-            />
-            <Input
-              name="last_name"
-              label="Last name"
-              value={state.last_name}
-              handleChange={handleChange}
-            />
-            <Input
-              name="email"
-              label="Email"
-              type="email"
-              isFullWidth
-              value={state.email}
-              handleChange={handleChange}
-            />
-            <Input
-              name="phone_number"
-              label="Phone number"
-              type="tel"
-              isFullWidth
-              value={state.phone_number}
-              handleChange={handleChange}
-            />
-            <Input
-              name="subject"
-              label="Subject"
-              isFullWidth
-              value={state.subject}
-              handleChange={handleChange}
-            />
-            <TextArea
-              name="message"
-              label="Message"
-              value={state.message}
-              handleChange={handleChange}
-            />
-            <div className="sm:col-span-2">
-              <div className="flex items-start">
-                <CheckBox />
-                <div className="ml-3">
-                  <p className="text-base leading-6 text-gray-500">
-                    By selecting this, you agree to the{' '}
-                    <Link
-                      to="/privacy-policy/"
-                      className="font-medium text-gray-700 underline focus:outline-none focus:shadow-outline-primary"
-                    >
-                      Privacy Policy
-                    </Link>
-                    .
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="sm:col-span-2">
-              <span className="inline-flex w-full shadow-sm">
-                <button
-                  type="submit"
-                  className="inline-flex items-center justify-center w-full px-6 py-3 text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-gray-800 border border-transparent rounded-none hover:bg-gray-700 focus:outline-none focus:border-gray-900 focus:shadow-outline-primary active:bg-gray-900"
-                >
-                  Submit
-                </button>
-              </span>
-            </div>
-          </Form>
+            Submit
+          </button>
         </div>
-      </div>
+      </ContactForm>
     </article>
   );
 }
+
+Contact.propTypes = {
+  bgColorClass: PropTypes.string,
+  textColorClass: PropTypes.string,
+  subHeading: PropTypes.string.isRequired,
+};
+export { Contact };

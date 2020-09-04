@@ -20,6 +20,8 @@ module.exports = {
     description: '',
     author: '',
     siteUrl,
+    phone: '0439 788 444',
+    email: 'pacificblueelectrical@gmail.com',
   },
   plugins: [
     'gatsby-plugin-netlify',
