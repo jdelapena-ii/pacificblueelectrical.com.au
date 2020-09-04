@@ -14,7 +14,7 @@ function Footer() {
             <p className="space-y-2 font-serif text-5xl leading-none text-center text-white lg:flex lg:flex-col lg:text-6xl lg:text-left">
               <span className="tracking-wider">Keep </span>
               <span className="tracking-wider">Social </span>
-              <span className="tracking-wider">With us</span>
+              <span className="tracking-wider">With&nbsp;us</span>
             </p>
             <div className="flex items-center space-x-4">
               <p className="text-lg font-bold text-white lg:text-xl">
