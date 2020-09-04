@@ -4,7 +4,7 @@ import { Layout, SEO, Contact, Hero, Map, AboutInfo } from '../components';
 import { useGraphQL } from '../hooks';
 
 export default function IndexPage() {
-  const { aboutHeroImage, aboutSecondaryImage } = useGraphQL();
+  const { aboutHeroImage, aboutHeroTwoImage } = useGraphQL();
   console.log(aboutHeroImage);
   return (
     <Layout>
@@ -111,9 +111,11 @@ export default function IndexPage() {
         </ul>
       </Hero>
       <AboutInfo />
-      <Hero bgImage={aboutSecondaryImage.childImageSharp.fluid} />
+      <Hero bgImage={aboutHeroTwoImage.childImageSharp.fluid} />
       <Contact />
       <Map />
     </Layout>
   );
 }
+
+export default AboutPage;

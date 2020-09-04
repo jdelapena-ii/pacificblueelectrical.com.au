@@ -15,28 +15,42 @@ export function useGraphQL() {
         site {
           siteMetadata {
             title
+            phone
+            email
           }
         }
         homeHeroImage: file(relativePath: { eq: "hero/home.jpg" }) {
           childImageSharp {
             fluid(maxWidth: 1920, quality: 90) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
-        aboutHeroImage: file(relativePath: { eq: "about/about.jpg" }) {
+        homeHeroTwoImage: file(relativePath: { eq: "hero/home-2.jpg" }) {
           childImageSharp {
             fluid(maxWidth: 1920, quality: 90) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
-        aboutSecondaryImage: file(
-          relativePath: { eq: "about/aboutsecondary.jpg" }
-        ) {
+        servicesHeroImage: file(relativePath: { eq: "hero/services.jpg" }) {
           childImageSharp {
             fluid(maxWidth: 1920, quality: 90) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+        aboutHeroImage: file(relativePath: { eq: "hero/about.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 1920, quality: 90) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+        aboutHeroTwoImage: file(relativePath: { eq: "hero/about-2.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 1920, quality: 90) {
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
