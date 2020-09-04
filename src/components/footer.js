@@ -1,5 +1,6 @@
 import React from 'react';
 import { nanoid } from 'nanoid';
+
 import { useInstagram } from '../hooks';
 import { socialLinks } from '../data/site-navigation';
 
@@ -35,7 +36,7 @@ function Footer() {
           </div>
           <div className="grid grid-cols-2 col-span-3 gap-4 sm:grid-cols-3">
             {instagramFeed.map((feed, index) => (
-              <div key={index}>
+              <div key={index} className={index === 3 && 'sm:hidden'}>
                 <a
                   href={feed.url}
                   target="_blank"
