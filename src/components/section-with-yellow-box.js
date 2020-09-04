@@ -34,7 +34,7 @@ function SectionWithYellowBox({ heading, image, children }) {
 }
 
 SectionWithYellowBox.propTypes = {
-  heading: PropTypes.string,
+  heading: PropTypes.object,
   image: PropTypes.object,
 };
 

@@ -20,21 +20,47 @@ export function useGraphQL() {
         homeHeroImage: file(relativePath: { eq: "hero/home.jpg" }) {
           childImageSharp {
             fluid(maxWidth: 1920, quality: 90) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
         homeTwoImage: file(relativePath: { eq: "home-2.jpg" }) {
           childImageSharp {
             fluid(maxWidth: 1920, quality: 90) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
-        servicesHeroImage: file(relativePath: { eq: "hero/services.jpg" }) {
+        serviceHeroImage: file(relativePath: { eq: "hero/service.jpg" }) {
           childImageSharp {
             fluid(maxWidth: 1920, quality: 90) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+        serviceLevel2HeroImage: file(
+          relativePath: { eq: "hero/service-level-2.jpg" }
+        ) {
+          childImageSharp {
+            fluid(maxWidth: 1920, quality: 90) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+
+        serviceLevel2GridImages: allFile(
+          filter: {
+            extension: { regex: "/(jpg)|(png)|(tif)|(tiff)|(webp)|(jpeg)/" }
+            relativeDirectory: { eq: "grid/level-2" }
+          }
+        ) {
+          edges {
+            node {
+              childImageSharp {
+                fluid(maxWidth: 500, quality: 90) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
             }
           }
         }
