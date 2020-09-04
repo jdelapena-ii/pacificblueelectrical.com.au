@@ -38,7 +38,7 @@ export function Select({
           })}
           className={`block w-full rounded form-select px-4 py-3 text-sm md:text-base sm:leading-5 focus:outline-none border-black focus:shadow-outline-primary focus:border-primary-light ${
             errors[name]
-              ? 'border-red-500 focus:border-red-500 focus:shadow-outline-red'
+              ? 'border-red-700 focus:border-red-700 focus:shadow-outline-red'
               : ''
           }`}
         >

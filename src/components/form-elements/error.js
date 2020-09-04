@@ -3,7 +3,7 @@ import React from 'react';
 
 export function Error({ message }) {
   return (
-    <p role="alert" className="text-xs text-red-500 uppercase">
+    <p role="alert" className="text-xs text-red-700 uppercase">
       {message}
     </p>
   );

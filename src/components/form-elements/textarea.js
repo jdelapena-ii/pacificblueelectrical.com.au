@@ -44,7 +44,7 @@ export function TextArea({
           })}
           className={`block w-full px-4 py-3 text-sm md:text-base transition duration-150 ease-in-out rounded border-black text-black form-textarea focus:outline-none focus:shadow-outline-primary focus:border-primary-light placeholder-black ${
             errors[name]
-              ? 'border-red-500 focus:border-red-500 focus:shadow-outline-red'
+              ? 'border-red-700 focus:border-red-700 focus:shadow-outline-red'
               : ''
           }`}
         />

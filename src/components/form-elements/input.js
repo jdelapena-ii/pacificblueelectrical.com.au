@@ -48,7 +48,7 @@ export function Input({
             hidden ? 'hidden' : 'block'
           } w-full px-4 py-3 text-black placeholder-black bg-transparent border-black text-sm md:text-base rounded form-input sm:text-sm ${
             errors[name]
-              ? 'border-red-500 focus:border-red-500 focus:shadow-outline-red'
+              ? 'border-red-700 focus:border-red-700 focus:shadow-outline-red'
               : ''
           } `}
         />
