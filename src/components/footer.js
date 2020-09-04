@@ -8,15 +8,17 @@ function Footer() {
   const instagramFeed = useInstagram();
   return (
     <footer className="bg-brand-black">
-      <div className="max-w-screen-xl mx-auto overflow-hidden">
+      <div className="mx-auto overflow-hidden max-w-7xl">
         <div className="grid-cols-4 gap-4 px-4 lg:grid sm:px-8 lg:px-20">
-          <div className="flex flex-col items-center col-span-1 mb-8 space-y-6 lg:block lg:mb-0">
-            <p className="space-y-2 font-serif text-5xl leading-none text-center text-white lg:flex lg:flex-col lg:text-6xl lg:text-left">
-              <span className="tracking-wider">Keep </span>
-              <span className="tracking-wider">Social </span>
-              <span className="tracking-wider">With&nbsp;us</span>
+          <div className="flex flex-col justify-around col-span-1 py-8 space-y-6 lg:py-0">
+            <p className="font-serif text-5xl leading-10 text-center text-white lg:text-6xl lg:text-left">
+              <span>Keep </span>
+              <br className="hidden lg:inline" />
+              <span>Social </span>
+              <br className="hidden lg:inline" />
+              <span>With&nbsp;us</span>
             </p>
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center justify-center space-x-4 lg:justify-start">
               <p className="text-lg font-bold text-white lg:text-xl">
                 Follow us
               </p>
@@ -50,25 +52,24 @@ function Footer() {
                     srcSet={feed.srcSet.join(', ')}
                     className="absolute inset-0 object-contain w-full h-full"
                   />
-                  {feed.caption && (
-                    <div
-                      aria-hidden
-                      className="absolute inset-0 p-4 overflow-y-auto text-white break-words transition duration-300 ease-in-out bg-black bg-opacity-75 opacity-0 overscroll-y-auto hover:opacity-100"
-                    >
-                      {feed.caption}
-                    </div>
-                  )}
+
+                  <div
+                    aria-hidden
+                    className="absolute inset-0 p-4 overflow-y-auto text-white break-words transition duration-300 ease-in-out bg-black bg-opacity-75 opacity-0 overscroll-y-auto hover:opacity-100"
+                  >
+                    {feed.caption || 'View on Instagram'}
+                  </div>
                 </a>
               </div>
             ))}
           </div>
         </div>
-        <div className="py-2 mt-8 border-t border-white border-solid">
+        <div className="py-4 mt-8 text-center border-t border-white border-solid">
           <a
             href="https://www.phirannodesigns.com.au/"
             target="_blank"
             rel="noreferrer"
-            className="block text-sm leading-6 text-center text-white"
+            className="text-sm leading-6 text-white"
           >
             Website by Phiranno Designs
           </a>
