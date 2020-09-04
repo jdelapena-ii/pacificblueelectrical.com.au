@@ -38,6 +38,13 @@ export function useGraphQL() {
             }
           }
         }
+        pmqMap: file(relativePath: { eq: "pmq-map.png" }) {
+          childImageSharp {
+            fluid(maxWidth: 1920, quality: 90) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     `
   );
