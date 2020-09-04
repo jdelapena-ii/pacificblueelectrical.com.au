@@ -1,10 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
-import { AnimatePresence, motion } from 'framer-motion';
 import { DialogOverlay, DialogContent } from '@reach/dialog';
-
+import { AnimatePresence, motion } from 'framer-motion';
 import { nanoid } from 'nanoid';
+import PropTypes from 'prop-types';
 
 import { mainNavigation } from '../data/site-navigation';
 

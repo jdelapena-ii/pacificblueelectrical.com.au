@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import { nanoid } from 'nanoid';
 
 import { mainNavigation } from '../data/site-navigation';
-import { Logo } from './vectors';
+import { LogoMobile, Logo } from './vectors';
 import { MobileMenu } from './mobile-menu';
 import { useGraphQL } from '../hooks';
 
@@ -21,10 +21,11 @@ export function Header() {
 
       <nav>
         <div className="px-4 py-6 mx-auto max-w-7xl sm:px-8 lg:px-20">
-          <div className="flex justify-between">
+          <div className="flex items-center justify-between">
             <div className="flex">
               <Link to="/" className="flex items-center flex-shrink-0">
-                <Logo className="w-auto h-10 sm:h-14 lg:h-20" />
+                <LogoMobile className="w-auto h-14 sm:hidden" />
+                <Logo className="hidden w-auto sm:block sm:h-14 lg:h-20" />
               </Link>
             </div>
             <div className="flex space-x-4 md:space-x-8">
