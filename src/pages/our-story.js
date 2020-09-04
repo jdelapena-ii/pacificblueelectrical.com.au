@@ -15,7 +15,7 @@ function OurStoryPage() {
 
   return (
     <Layout>
-      <SEO title="About" />
+      <SEO title="Our Story" />
       <Hero bgImage={aboutHeroImage.childImageSharp.fluid}>
         <h1 className="flex flex-col mb-4 font-serif text-6xl text-white">
           <span className="leading-none">YOUR EXPERIENCE</span>

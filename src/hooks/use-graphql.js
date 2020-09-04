@@ -82,6 +82,20 @@ export function useGraphQL() {
             }
           }
         }
+        contactHeroImage: file(relativePath: { eq: "hero/contact.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 1920, quality: 90) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+        pmqMap: file(relativePath: { eq: "pmq-map.png" }) {
+          childImageSharp {
+            fluid(maxWidth: 1920, quality: 90) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     `
   );

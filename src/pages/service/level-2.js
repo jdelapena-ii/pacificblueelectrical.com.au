@@ -14,7 +14,7 @@ export default function ServicesPage() {
 
   return (
     <Layout>
-      <SEO title="Services" />
+      <SEO title="Level 2 - Service" />
       <Hero bgImage={serviceLevel2HeroImage.childImageSharp.fluid}>
         <h1 className="flex flex-col max-w-xl mb-4 font-serif text-5xl leading-none text-white sm:text-6xl">
           We work at a time that suits you
