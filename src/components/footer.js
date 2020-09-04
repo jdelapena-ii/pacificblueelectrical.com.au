@@ -28,7 +28,7 @@ function Footer() {
                     className="text-white transition duration-150 ease-in-out hover:text-brand-blue"
                   >
                     <span className="sr-only">{node.label}</span>
-                    <node.icon className="w-8 h-8 lg:w-10 lg:h-10" />
+                    <node.icon className="w-8 h-8 lg:w-9 lg:h-9" />
                   </a>
                 ))}
               </div>
