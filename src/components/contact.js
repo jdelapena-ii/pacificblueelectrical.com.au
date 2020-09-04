@@ -25,7 +25,7 @@ function Contact({ bgColorClass, subHeading, textColorClass }) {
 
         <p className="font-semibold">{subHeading}</p>
         <p className="mb-12">
-          Simply send us an email us for a free quote today or phone us on
+          Simply send us an email us for a free quote today or phone us on{' '}
           <a href="tel:404040404">404 040 404</a>
         </p>
 
