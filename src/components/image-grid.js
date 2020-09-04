@@ -6,7 +6,7 @@ import { useGraphQL } from '../hooks';
 function ImageGrid() {
   const { homeTwoImage } = useGraphQL();
   return (
-    <div className="grid bg-black md:grid-cols-2 lg:grid-cols-4">
+    <div className="grid pt-20 bg-black md:grid-cols-2 lg:grid-cols-4">
       <ServiceImage image={homeTwoImage.childImageSharp.fluid} />
       <ServiceImage image={homeTwoImage.childImageSharp.fluid} />
       <ServiceImage image={homeTwoImage.childImageSharp.fluid} />
