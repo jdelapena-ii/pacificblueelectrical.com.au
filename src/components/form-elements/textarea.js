@@ -22,7 +22,7 @@ export function TextArea({
       >
         <span className="sr-only">{label}</span>
       </label>
-      <div className="relative mt-6 shadow-sm">
+      <div className="relative shadow-sm">
         <textarea
           id={name}
           name={name}
@@ -42,9 +42,9 @@ export function TextArea({
               ),
             },
           })}
-          className={`block w-full px-4 py-3 transition duration-150 ease-in-out rounded border-black text-black form-textarea focus:outline-none focus:shadow-outline-primary focus:border-primary-light placeholder-black ${
+          className={`block w-full px-4 py-3 text-sm md:text-base transition duration-150 ease-in-out rounded border-black text-black form-textarea focus:outline-none focus:shadow-outline-primary focus:border-primary-light placeholder-black ${
             errors[name]
-              ? 'border-red-300 focus:border-red-300 focus:shadow-outline-red'
+              ? 'border-red-500 focus:border-red-500 focus:shadow-outline-red'
               : ''
           }`}
         />

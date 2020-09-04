@@ -23,7 +23,7 @@ export function Input({
       >
         <span className="sr-only">{label}</span>
       </label>
-      <div className="relative mt-6 shadow-sm">
+      <div className="relative shadow-sm">
         <input
           id={name}
           name={name}
@@ -46,9 +46,9 @@ export function Input({
           })}
           className={`${
             hidden ? 'hidden' : 'block'
-          } w-full px-4 py-3 text-base tracking-widest text-black placeholder-black bg-transparent border-black rounded form-input sm:text-sm ${
+          } w-full px-4 py-3 text-black placeholder-black bg-transparent border-black text-sm md:text-base rounded form-input sm:text-sm ${
             errors[name]
-              ? 'border-red-300 focus:border-red-300 focus:shadow-outline-red'
+              ? 'border-red-500 focus:border-red-500 focus:shadow-outline-red'
               : ''
           } `}
         />

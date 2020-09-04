@@ -19,7 +19,7 @@ export function Select({
       <label htmlFor={name} className="sr-only">
         {label}
       </label>
-      <div className="mt-6 rounded-md shadow-sm">
+      <div className="rounded-md shadow-sm">
         <select
           // onChange={(e) => {
           //   if (e.target.value === 'Other') setOtherRequired(true);
@@ -36,17 +36,17 @@ export function Select({
               false
             ),
           })}
-          className={`block w-full rounded form-select sm:text-sm sm:leading-5 focus:outline-none border-black focus:shadow-outline-primary focus:border-primary-light ${
+          className={`block w-full rounded form-select px-4 py-3 text-sm md:text-base sm:leading-5 focus:outline-none border-black focus:shadow-outline-primary focus:border-primary-light ${
             errors[name]
-              ? 'border-red-300 focus:border-red-300 focus:shadow-outline-red'
+              ? 'border-red-500 focus:border-red-500 focus:shadow-outline-red'
               : ''
           }`}
         >
-          <option className="bg-black" value="" disabled>
+          <option value="" disabled>
             What are you inquiring about?
           </option>
           {options.map((option) => (
-            <option className="bg-black" key={option} value={option}>
+            <option key={option} value={option}>
               {option}
             </option>
           ))}

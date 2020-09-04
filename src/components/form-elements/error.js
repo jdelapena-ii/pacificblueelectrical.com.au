@@ -3,10 +3,7 @@ import React from 'react';
 
 export function Error({ message }) {
   return (
-    <p
-      role="alert"
-      className="absolute text-xs tracking-widest text-red-400 uppercase transform -translate-y-full"
-    >
+    <p role="alert" className="text-xs text-red-500 uppercase">
       {message}
     </p>
   );

@@ -1,7 +1,13 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-import { Layout, SEO, Hero, SectionWithYellowBox } from '../components';
+import {
+  Layout,
+  SEO,
+  Hero,
+  SectionWithYellowBox,
+  Contact,
+} from '../components';
 import { useGraphQL } from '../hooks';
 
 function IndexPage() {
@@ -158,6 +164,12 @@ function IndexPage() {
           </Link>
         </div>
       </SectionWithYellowBox>
+
+      <Contact
+        bgColorClass="bg-brand-yellow"
+        textColorClass="text-black"
+        subHeading="In need of an electrician?"
+      />
     </Layout>
   );
 }
