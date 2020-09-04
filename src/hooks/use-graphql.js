@@ -17,6 +17,7 @@ export function useGraphQL() {
             title
             phone
             email
+            location
           }
         }
         homeHeroImage: file(relativePath: { eq: "hero/home.jpg" }) {

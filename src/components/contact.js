@@ -3,44 +3,59 @@ import { useForm } from 'react-hook-form';
 import PropTypes from 'prop-types';
 
 import { ContactForm, Input, TextArea, Select } from './form-elements';
+import { useGraphQL } from '../hooks';
 
-function Contact({ bgColorClass, subHeading, textColorClass }) {
+function Contact({
+  bgColorClass = 'bg-brand-blue',
+  subHeading = 'Contact Us',
+  textColorClass = 'text-white',
+}) {
   const { register, handleSubmit, errors } = useForm({ mode: 'onBlur' });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  const {
+    site: { siteMetadata },
+  } = useGraphQL();
+
   return (
     <article
-      className={`grid gap-4 py-6 md:py-0 px-4 mb-12 sm:px-8 lg:px-20 md:grid-cols-2 ${
-        bgColorClass || 'bg-brand-blue'
-      }`}
+      className={`grid gap-4 py-6 md:py-0 px-4 mb-12 sm:px-8 lg:px-20 md:grid-cols-2 ${bgColorClass}`}
     >
-      <div
-        className={`md:pt-12 md:pr-8 md:mb-0 mb-8 ${
-          textColorClass || 'text-white'
-        }`}
-      >
+      <div className={`md:pt-12 md:pr-8 md:mb-0 mb-8 ${textColorClass}`}>
         <h1 className="mb-2 font-serif text-5xl text-center md:text-6xl md:text-left">
           Contact us
         </h1>
 
-        <p className="font-semibold">{subHeading}</p>
-        <p className="mb-12">
-          Simply send us an email us for a free quote today or phone us on
-          <a href="tel:404040404">404 040 404</a>
+        <h2 className="font-semibold">{subHeading}</h2>
+        <p>
+          Simply send us an email us for a free quote today or phone us on{' '}
+          <a href={`tel:${siteMetadata.phone.split(' ').join('')}`}>
+            {siteMetadata.phone}
+          </a>
         </p>
 
-        <p>
-          <span className="font-semibold">Phone</span>{' '}
-          <a href="tel:404040404">404 040 404</a>
-        </p>
-        <p>
-          <span className="font-semibold">Location</span>{' '}
-          <span>Port Macquire, XXXX</span>
-        </p>
-        <p>
-          <span className="font-semibold">24/7 Emergency Service</span>{' '}
-          <a href="tel:404040404">404 040 404</a>
-        </p>
+        <dl className="mt-12">
+          <div>
+            <dt className="inline font-semibold">Phone </dt>
+            <dd className="inline">
+              <a href={`tel:${siteMetadata.phone.split(' ').join('')}`}>
+                {siteMetadata.phone}
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt className="inline font-semibold">Location </dt>
+            <dd className="inline">{siteMetadata.location}</dd>
+          </div>
+          <div>
+            <dt className="inline font-semibold">24/7 Emergency Service </dt>
+            <dd className="inline">
+              <a href={`tel:${siteMetadata.phone.split(' ').join('')}`}>
+                {siteMetadata.phone}
+              </a>
+            </dd>
+          </div>
+        </dl>
       </div>
 
       <ContactForm
@@ -102,4 +117,5 @@ Contact.propTypes = {
   textColorClass: PropTypes.string,
   subHeading: PropTypes.string.isRequired,
 };
+
 export { Contact };

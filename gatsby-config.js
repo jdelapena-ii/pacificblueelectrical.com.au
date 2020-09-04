@@ -22,6 +22,7 @@ module.exports = {
     siteUrl,
     phone: '0439 788 444',
     email: 'pacificblueelectrical@gmail.com',
+    location: 'Port Macquarie',
   },
   plugins: [
     'gatsby-plugin-netlify',
