@@ -1,9 +1,8 @@
 import React from 'react';
 
-import { Layout, SEO, Contact, Hero, Map } from '../components';
-import { useGraphQL } from '../hooks';
+import { Layout, SEO, Contact, Map } from '../components';
 
-export default function IndexPage() {
+function AboutPage() {
   return (
     <Layout>
       <SEO title="About" />
@@ -12,3 +11,5 @@ export default function IndexPage() {
     </Layout>
   );
 }
+
+export default AboutPage;

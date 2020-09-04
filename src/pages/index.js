@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 import { Layout, SEO, Hero, SectionWithYellowBox } from '../components';
 import { useGraphQL } from '../hooks';
 
-export default function IndexPage() {
+function IndexPage() {
   const { homeHeroImage, homeTwoImage } = useGraphQL();
 
   return (
@@ -15,12 +15,10 @@ export default function IndexPage() {
           <span className="leading-none">DO IT ONCE,</span>
           <span className="leading-none">DO IT RIGHT</span>
         </h1>
-
         <ul className="space-y-1 list-none">
           <li>
             <div className="flex items-start">
               <span className="inline-flex items-center">
-                ​
                 <svg
                   fill="currentColor"
                   viewBox="0 0 20 20"
@@ -43,7 +41,6 @@ export default function IndexPage() {
           <li>
             <div className="flex items-start">
               <span className="inline-flex items-center">
-                ​
                 <svg
                   fill="currentColor"
                   viewBox="0 0 20 20"
@@ -66,7 +63,6 @@ export default function IndexPage() {
           <li>
             <div className="flex items-start">
               <span className="inline-flex items-center">
-                ​
                 <svg
                   fill="currentColor"
                   viewBox="0 0 20 20"
@@ -89,7 +85,6 @@ export default function IndexPage() {
           <li>
             <div className="flex items-start">
               <span className="inline-flex items-center">
-                ​
                 <svg
                   fill="currentColor"
                   viewBox="0 0 20 20"
@@ -112,7 +107,6 @@ export default function IndexPage() {
           <li>
             <div className="flex items-start">
               <span className="inline-flex items-center">
-                ​
                 <svg
                   fill="currentColor"
                   viewBox="0 0 20 20"
@@ -167,3 +161,5 @@ export default function IndexPage() {
     </Layout>
   );
 }
+
+export default IndexPage;
