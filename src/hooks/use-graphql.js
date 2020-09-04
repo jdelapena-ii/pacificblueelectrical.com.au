@@ -24,6 +24,22 @@ export function useGraphQL() {
             }
           }
         }
+        aboutHeroImage: file(relativePath: { eq: "about/about.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 1920, quality: 90) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        aboutSecondaryImage: file(
+          relativePath: { eq: "about/aboutsecondary.jpg" }
+        ) {
+          childImageSharp {
+            fluid(maxWidth: 1920, quality: 90) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     `
   );
