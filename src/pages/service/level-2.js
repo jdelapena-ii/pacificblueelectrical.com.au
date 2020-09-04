@@ -12,8 +12,6 @@ import { useGraphQL } from '../../hooks';
 export default function ServicesPage() {
   const { serviceLevel2HeroImage, serviceLevel2GridImages } = useGraphQL();
 
-  console.log(serviceLevel2GridImages);
-
   return (
     <Layout>
       <SEO title="Services" />
@@ -165,7 +163,7 @@ export default function ServicesPage() {
         </div>
       </SectionWithYellowBox>
 
-      <ImageGrid images={serviceLevel2GridImages} />
+      <ImageGrid images={serviceLevel2GridImages.edges} />
     </Layout>
   );
 }

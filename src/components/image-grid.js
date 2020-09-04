@@ -1,36 +1,24 @@
 import React from 'react';
 import GatsbyImage from 'gatsby-image';
 import PropTypes from 'prop-types';
-import { useGraphQL } from '../hooks';
 
-function ImageGrid() {
-  const { serviceLevel2GridImages } = useGraphQL();
-
-  const renderImages = serviceLevel2GridImages.edges.map((item, index) => (
-    <ServiceImage key={index} image={item.node.childImageSharp.fluid} />
-  ));
-
+function ImageGrid({ images }) {
   return (
-    <div className="grid gap-4 pt-20 bg-black md:grid-cols-2 lg:grid-cols-4">
-      {renderImages}
-    </div>
+    <article className="grid grid-cols-2 gap-4 px-4 mb-12 bg-black sm:px-8 lg:px-20 md:grid-cols-3 lg:grid-cols-4">
+      {images.map((item, index) => (
+        <div className="relative h-0 aspect-ratio-square" key={index}>
+          <GatsbyImage
+            fluid={item.node.childImageSharp.fluid}
+            className="object-cover w-full h-full"
+            style={{ position: 'absolute' }}
+          />
+        </div>
+      ))}
+    </article>
   );
 }
 
-function ServiceImage({ image }) {
-  return (
-    <div className="relative h-0 aspect-ratio-square">
-      <GatsbyImage
-        fluid={image}
-        className="object-cover w-full h-full"
-        style={{ position: 'absolute' }}
-      />
-    </div>
-  );
-}
-
-ServiceImage.propTypes = {
-  image: PropTypes.object.isRequired,
+ImageGrid.propTypes = {
+  images: PropTypes.array.isRequired,
 };
-
 export { ImageGrid };
