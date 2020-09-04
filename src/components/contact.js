@@ -21,7 +21,7 @@ function Contact({
     <article
       className={`grid items-center py-6 md:py-0 lg:px-20 md:grid-cols-2 ${bgColorClass}`}
     >
-      <div className={`px-4 pb-12 sm:px-8 ${textColorClass}`}>
+      <div className={`px-4 pb-12 sm:px-8 lg:pl-0 ${textColorClass}`}>
         <h1 className="mb-2 font-serif text-5xl text-center md:text-6xl md:text-left">
           Contact us
         </h1>
