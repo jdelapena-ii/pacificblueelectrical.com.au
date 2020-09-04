@@ -15,6 +15,8 @@ export function useGraphQL() {
         site {
           siteMetadata {
             title
+            phone
+            email
           }
         }
         homeHeroImage: file(relativePath: { eq: "hero/home.jpg" }) {
