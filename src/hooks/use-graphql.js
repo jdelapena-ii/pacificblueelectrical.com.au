@@ -22,21 +22,35 @@ export function useGraphQL() {
         homeHeroImage: file(relativePath: { eq: "hero/home.jpg" }) {
           childImageSharp {
             fluid(maxWidth: 1920, quality: 90) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
-        homeTwoImage: file(relativePath: { eq: "home-2.jpg" }) {
+        homeHeroTwoImage: file(relativePath: { eq: "hero/home-2.jpg" }) {
           childImageSharp {
             fluid(maxWidth: 1920, quality: 90) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
         servicesHeroImage: file(relativePath: { eq: "hero/services.jpg" }) {
           childImageSharp {
             fluid(maxWidth: 1920, quality: 90) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+        aboutHeroImage: file(relativePath: { eq: "hero/about.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 1920, quality: 90) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+        aboutHeroTwoImage: file(relativePath: { eq: "hero/about-2.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 1920, quality: 90) {
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }

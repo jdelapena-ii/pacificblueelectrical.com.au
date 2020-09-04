@@ -8,11 +8,7 @@ function SectionWithYellowBox({ heading, image, children }) {
       <div className={`${image ? 'grid md:grid-cols-2' : ''}`}>
         <div className={`${!image ? 'flex md:flex-row flex-col' : ''}`}>
           <div className={`relative py-8${!image ? ' flex' : ''}`}>
-            <div
-              className={`absolute top-0 left-0 w-48 transform -translate-y-6 md:-translate-y-12 bg-brand-yellow${
-                !image ? ' h-full' : ' yellow-box'
-              }`}
-            />
+            <div className="absolute top-0 left-0 w-48 transform -translate-y-6 md:-translate-y-12 bg-brand-yellow yellow-box" />
             {heading}
           </div>
 
