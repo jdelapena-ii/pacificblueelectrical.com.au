@@ -11,7 +11,7 @@ import {
 import { useGraphQL } from '../hooks';
 
 function IndexPage() {
-  const { homeHeroImage, homeTwoImage } = useGraphQL();
+  const { homeHeroImage, homeheroTwoImage } = useGraphQL();
 
   return (
     <Layout>
@@ -143,7 +143,7 @@ function IndexPage() {
             </h2>
           </>
         }
-        image={homeTwoImage.childImageSharp.fluid}
+        image={homeheroTwoImage.childImageSharp.fluid}
       >
         <div className="pt-8 pb-10 md:pb-16 md:px-8 md:max-w-md">
           <p className="mb-4 text-white">
