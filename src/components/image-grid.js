@@ -4,17 +4,15 @@ import PropTypes from 'prop-types';
 import { useGraphQL } from '../hooks';
 
 function ImageGrid() {
-  const { homeTwoImage } = useGraphQL();
+  const { serviceLevel2GridImages } = useGraphQL();
+
+  const renderImages = serviceLevel2GridImages.edges.map((item, index) => (
+    <ServiceImage key={index} image={item.node.childImageSharp.fluid} />
+  ));
+
   return (
     <div className="grid gap-4 pt-20 bg-black md:grid-cols-2 lg:grid-cols-4">
-      <ServiceImage image={homeTwoImage.childImageSharp.fluid} />
-      <ServiceImage image={homeTwoImage.childImageSharp.fluid} />
-      <ServiceImage image={homeTwoImage.childImageSharp.fluid} />
-      <ServiceImage image={homeTwoImage.childImageSharp.fluid} />
-      <ServiceImage image={homeTwoImage.childImageSharp.fluid} />
-      <ServiceImage image={homeTwoImage.childImageSharp.fluid} />
-      <ServiceImage image={homeTwoImage.childImageSharp.fluid} />
-      <ServiceImage image={homeTwoImage.childImageSharp.fluid} />
+      {renderImages}
     </div>
   );
 }
