@@ -13,14 +13,10 @@ import {
 import { useGraphQL } from '../hooks';
 
 function IndexPage() {
-  const { homeHeroImage } = useGraphQL();
-
   return (
     <Layout>
       <SEO title="Home" />
-      <Hero bgImage={homeHeroImage.childImageSharp.fluid}>
-        <HeroCopy />
-      </Hero>
+      <HeroSection />
       <ServicesIntro />
       <Contact
         bgColorClass="bg-brand-yellow"
@@ -31,13 +27,14 @@ function IndexPage() {
   );
 }
 
-function HeroCopy() {
+function HeroSection() {
+  const { homeHeroImage } = useGraphQL();
   return (
-    <>
+    <Hero bgImage={homeHeroImage.childImageSharp.fluid}>
       <h1 className="font-serif text-5xl leading-none text-white sm:text-6xl">
-        <span className="leading-none">DO IT ONCE,</span>
+        <span className="leading-none">Do it once,</span>
         <br />
-        <span className="leading-none">DO IT RIGHT</span>
+        <span className="leading-none">Do it right</span>
       </h1>
       <ul className="mt-4 space-y-1">
         <ListItem>All Types Of Electrical Work</ListItem>
@@ -46,7 +43,7 @@ function HeroCopy() {
         <ListItem>Trusted And Reliable</ListItem>
         <ListItem>Free Quotes</ListItem>
       </ul>
-    </>
+    </Hero>
   );
 }
 
