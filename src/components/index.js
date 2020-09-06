@@ -6,5 +6,5 @@ export * from './image-grid';
 export * from './layout';
 export * from './list-item';
 export * from './map';
-export * from './section-with-yellow-box';
+export * from './map-image';
 export * from './seo';
