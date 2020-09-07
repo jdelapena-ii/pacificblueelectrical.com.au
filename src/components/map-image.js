@@ -2,15 +2,13 @@ import React from 'react';
 import GatsbyImage from 'gatsby-image';
 
 import { useGraphQL } from '../hooks';
+import { HeroHeading } from './hero-heading';
 
 function MapImage() {
   const { pmqMap } = useGraphQL();
 
   return (
-    <article
-      className="relative mb-12 overflow-hidden"
-      style={{ minHeight: '20rem' }}
-    >
+    <article className="relative overflow-hidden">
       <div className="absolute inset-0 sm:relative sm:h-0 sm:aspect-ratio-16/9">
         <div className="absolute inset-0 flex">
           <GatsbyImage
@@ -19,10 +17,13 @@ function MapImage() {
           />
         </div>
       </div>
-      <div className="absolute inset-y-0 flex items-center h-full max-w-xs text-right right-16">
-        <h2 className="font-serif text-6xl leading-none">
-          Servicing the mid north coast
-        </h2>
+
+      <div className="relative inset-0 flex items-center justify-end px-4 py-8 text-right sm:absolute sm:px-8 lg:px-20">
+        <HeroHeading
+          heading={['Servicing', 'the Mid', 'North', 'Coast']}
+          textColour="text-brand-black"
+          tag="h2"
+        />
       </div>
     </article>
   );

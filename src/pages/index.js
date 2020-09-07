@@ -5,10 +5,11 @@ import {
   Layout,
   SEO,
   Hero,
+  HeroHeading,
+  Heading,
   ListItem,
   BlueLink,
   Contact,
-  Heading,
 } from '../components';
 import { useGraphQL } from '../hooks';
 
@@ -31,11 +32,7 @@ function HeroSection() {
   const { homeHeroImage } = useGraphQL();
   return (
     <Hero bgImage={homeHeroImage.childImageSharp.fluid}>
-      <h1 className="font-serif text-5xl leading-none text-white sm:text-6xl">
-        <span className="leading-none">Do it once,</span>
-        <br />
-        <span className="leading-none">Do it right</span>
-      </h1>
+      <HeroHeading heading={['Do it once, ', 'do it right']} />
       <ul className="mt-4 space-y-1">
         <ListItem>All Types Of Electrical Work</ListItem>
         <ListItem>Friendly Knowledgeable Electricians</ListItem>

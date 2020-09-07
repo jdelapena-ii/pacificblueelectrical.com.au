@@ -3,6 +3,7 @@ export * from './checkbox-section';
 export * from './contact';
 export * from './heading-with-copy';
 export * from './heading';
+export * from './hero-heading';
 export * from './hero';
 export * from './image-grid';
 export * from './layout';
