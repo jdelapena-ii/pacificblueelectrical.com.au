@@ -12,6 +12,7 @@ import {
   HeadingWithCopy,
   Heading,
   CheckboxSection,
+  Contact,
 } from '../components';
 import { useGraphQL } from '../hooks';
 
@@ -24,7 +25,14 @@ function Service({ data: { sanityService } }) {
       <HeroSection sanityService={sanityService} />
       <ServiceCopy sanityService={sanityService} />
       <CheckboxSection sanityService={sanityService} />
+      <div className="mt-24" />
       <ImageGrid images={sanityService.imageGalleryImages} />
+      <div className="mt-24" />
+      <Contact
+        bgColorClass="bg-brand-yellow"
+        textColorClass="text-black"
+        subHeading="In need of an electrician?"
+      />
     </Layout>
   );
 }
