@@ -1,4 +1,5 @@
 export * from './blue-link';
+export * from './checkbox-section';
 export * from './contact';
 export * from './heading';
 export * from './hero';
