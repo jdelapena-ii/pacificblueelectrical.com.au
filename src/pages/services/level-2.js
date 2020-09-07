@@ -8,6 +8,7 @@ import {
   ListItem,
   HeadingWithCopy,
   Heading,
+  CheckboxSection,
 } from '../../components';
 import { useGraphQL } from '../../hooks';
 
@@ -19,6 +20,7 @@ function ServicesPage() {
       <SEO title="Level 2 - Service" />
       <HeroSection />
       <ServiceCopy />
+      <CheckboxSection />
       <ImageGrid images={serviceLevel2GridImages.edges} />
     </Layout>
   );

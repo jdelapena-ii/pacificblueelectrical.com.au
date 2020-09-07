@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function ListItem({ children }) {
+function ListItem({ children, bold = true }) {
   return (
     <li>
       <div className="flex items-start">
@@ -21,7 +21,7 @@ function ListItem({ children }) {
             />
           </svg>
         </span>
-        <span className="inline-block ml-3 font-bold text-white">
+        <span className={`inline-block ml-3 ${bold && 'font-bold'} text-white`}>
           {children}
         </span>
       </div>
@@ -31,6 +31,7 @@ function ListItem({ children }) {
 
 ListItem.propTypes = {
   children: PropTypes.node.isRequired,
+  bold: PropTypes.bool,
 };
 
 export { ListItem };
