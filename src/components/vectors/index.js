@@ -5,3 +5,4 @@ export * from './instagram-icon';
 export * from './level-2-icon';
 export * from './logo-mobile';
 export * from './logo';
+export * from './quote-icon';

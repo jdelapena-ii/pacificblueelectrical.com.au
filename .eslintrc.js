@@ -6,4 +6,8 @@
 module.exports = {
   root: true,
   extends: ['lukebennett'],
+  rules: {
+    "jsx-a11y/no-noninteractive-element-interactions": 0,
+    "jsx-a11y/no-noninteractive-tabindex": 0
+  }
 };

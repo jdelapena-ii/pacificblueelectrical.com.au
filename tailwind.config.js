@@ -1,6 +1,7 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 const tailwindUI = require('@tailwindcss/ui');
-const tailwindcssAspectRatio = require('tailwindcss-aspect-ratio');
+const aspectRatio = require('tailwindcss-aspect-ratio');
+const lineClamp = require('tailwindcss-line-clamp');
 
 module.exports = {
   purge: ['./src/**/*.js'],
@@ -11,6 +12,9 @@ module.exports = {
     aspectRatio: {
       square: [1, 1],
       '16/9': [16, 9],
+    },
+    lineClamp: {
+      7: 7,
     },
     typography: (theme) => ({
       default: {
@@ -37,5 +41,5 @@ module.exports = {
     },
   },
   variants: { margin: ['responsive', 'first'] },
-  plugins: [tailwindUI, tailwindcssAspectRatio],
+  plugins: [tailwindUI, aspectRatio, lineClamp],
 };

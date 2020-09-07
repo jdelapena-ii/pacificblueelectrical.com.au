@@ -9,6 +9,7 @@ import {
   Heading,
   ListItem,
   BlueLink,
+  TestimonialSlider,
   Contact,
 } from '../components';
 import { useGraphQL } from '../hooks';
@@ -19,6 +20,7 @@ function IndexPage() {
       <SEO title="Home" />
       <HeroSection />
       <ServicesIntro />
+      <TestimonialSlider />
       <Contact
         bgColorClass="bg-brand-yellow"
         textColorClass="text-black"
