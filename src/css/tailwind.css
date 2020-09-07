@@ -63,11 +63,6 @@ button:focus {
   @apply shadow-outline outline-none;
 }
 
-/* Yellow box sizing */
-.yellow-box {
-  height: 120%;
-}
-
 /*! purgecss end ignore */
 
 /**
@@ -79,3 +74,13 @@ button:focus {
 /**
  * Utility classes
  */
+
+@variants hover, focus {
+  /* Subtle shadow around text to increase contrast */
+  .text-shadow {
+    text-shadow: 0em 0em 0.25em hsla(0, 0%, 0%, 0.5);
+  }
+  .text-shadow-none {
+    text-shadow: none;
+  }
+}

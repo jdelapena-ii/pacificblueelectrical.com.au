@@ -9,7 +9,7 @@ function Footer() {
   return (
     <footer className="bg-brand-black">
       <div className="mx-auto overflow-hidden max-w-7xl">
-        <div className="grid-cols-4 gap-4 px-4 lg:grid sm:px-8 lg:px-20">
+        <div className="grid-cols-4 gap-4 px-4 py-8 lg:grid sm:px-8 lg:px-20">
           <div className="flex flex-col justify-around col-span-1 py-8 space-y-6 lg:py-0">
             <p className="font-serif text-5xl leading-10 text-center text-white lg:text-6xl lg:text-left">
               <span>Keep </span>
@@ -64,7 +64,7 @@ function Footer() {
             ))}
           </div>
         </div>
-        <div className="py-4 mt-8 text-center border-t border-white border-solid">
+        <div className="py-4 text-center border-t border-white border-solid">
           <a
             href="https://www.phirannodesigns.com.au/"
             target="_blank"

@@ -4,14 +4,24 @@ const tailwindcssAspectRatio = require('tailwindcss-aspect-ratio');
 
 module.exports = {
   purge: ['./src/**/*.js'],
+  future: {
+    removeDeprecatedGapUtilities: true,
+  },
   theme: {
-    future: {
-      removeDeprecatedGapUtilities: true,
-    },
     aspectRatio: {
       square: [1, 1],
       '16/9': [16, 9],
     },
+    typography: (theme) => ({
+      default: {
+        css: {
+          color: theme('colors.gray["100"]'),
+          'h1, h2, h3, h4': {
+            color: theme('colors.white'),
+          },
+        },
+      },
+    }),
     extend: {
       fontFamily: {
         sans: ['Montserrat', ...defaultTheme.fontFamily.sans],
