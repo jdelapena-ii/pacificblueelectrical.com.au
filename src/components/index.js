@@ -5,6 +5,7 @@ export * from './hero';
 export * from './image-grid';
 export * from './layout';
 export * from './list-item';
-export * from './map';
 export * from './map-image';
+export * from './map';
 export * from './seo';
+export * from './yellow-link';
