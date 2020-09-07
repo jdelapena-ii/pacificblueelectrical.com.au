@@ -6,8 +6,9 @@ import {
   Hero,
   ListItem,
   Heading,
-  Contact,
   HeadingWithCopy,
+  ServicesGrid,
+  Contact,
 } from '../../components';
 import { useGraphQL } from '../../hooks';
 
@@ -17,6 +18,7 @@ function ServicePage() {
       <SEO title="Services" />
       <HeroSection />
       <OurServices />
+      <ServicesGrid />
       <Contact
         bgColorClass="bg-brand-yellow"
         textColorClass="text-black"

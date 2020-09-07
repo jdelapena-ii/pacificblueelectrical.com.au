@@ -11,4 +11,5 @@ export * from './list-item';
 export * from './map-image';
 export * from './map';
 export * from './seo';
+export * from './services-grid';
 export * from './yellow-link';
