@@ -7,6 +7,7 @@ import {
   ListItem,
   Heading,
   Contact,
+  HeadingWithCopy,
 } from '../../components';
 import { useGraphQL } from '../../hooks';
 
@@ -45,23 +46,20 @@ function HeroSection() {
 
 function OurServices() {
   return (
-    <article className="grid items-start px-4 lg:grid-cols-4 sm:px-8 lg:px-20">
-      <Heading heading={['Our ', 'services']} tag="h2" />
-      <div className="lg:col-span-3">
-        <div className="max-w-3xl pt-4 mx-auto prose text-white md:pt-8 md:pb-16 md:px-8">
-          <p>
-            Wether your project involves level 2, general electrical or phone
-            &amp; data, you can be assured Pacific Blue Electrical can safely
-            and professionally comlete your project without outsourcing to other
-            contractors to save your time and money.
-          </p>
-          <p>
-            We listen to what you want, discuss available options and suggest
-            the best solutions for your needs.
-          </p>
-        </div>
-      </div>
-    </article>
+    <HeadingWithCopy
+      heading={<Heading heading={['Our ', 'services']} tag="h2" />}
+    >
+      <p>
+        Wether your project involves level 2, general electrical or phone &amp;
+        data, you can be assured Pacific Blue Electrical can safely and
+        professionally comlete your project without outsourcing to other
+        contractors to save your time and money.
+      </p>
+      <p>
+        We listen to what you want, discuss available options and suggest the
+        best solutions for your needs.
+      </p>
+    </HeadingWithCopy>
   );
 }
 
