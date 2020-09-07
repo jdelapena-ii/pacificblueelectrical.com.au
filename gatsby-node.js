@@ -26,7 +26,7 @@ exports.createPages = async ({ graphql, actions }) => {
       slug: { current: slug },
     } = service;
     createPage({
-      path: `/services-sanity/${slug}`,
+      path: `/services/${slug}`,
       component: require.resolve('./src/templates/service.js'),
       context: { slug },
     });
