@@ -2,6 +2,8 @@ import React from 'react';
 import { navigate } from 'gatsby';
 import PropTypes from 'prop-types';
 
+import { BotField } from './bot-field';
+
 export function ContactForm({
   action = '/success/',
   children,
@@ -44,6 +46,7 @@ export function ContactForm({
       method="POST"
       name={name}
     >
+      <BotField />
       {children}
     </form>
   );
