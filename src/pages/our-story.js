@@ -93,7 +93,7 @@ function AboutTheOwner() {
     site: { siteMetadata },
   } = useGraphQL();
   return (
-    <div>
+    <div className="flex flex-col">
       <div className="prose">
         <h3>About the Owner</h3>
         <p>
@@ -113,7 +113,7 @@ function AboutTheOwner() {
           quality time with my young family.
         </p>
       </div>
-      <div className="mt-4">
+      <div className="pt-4 mt-auto">
         <YellowLink
           to={`tel:${siteMetadata.phone.split(' ').join('')}`}
           text="Call to get your free quote now"
