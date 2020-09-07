@@ -20,7 +20,7 @@ function ListItem({ children, bold = true }) {
           />
         </svg>
       </span>
-      <span className="inline-block ml-3 font-semibold text-white">
+      <span className={`inline-block ml-3 ${bold && 'font-bold'} text-white`}>
         {children}
       </span>
     </li>
